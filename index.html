@@ -123,8 +123,8 @@
 
     /*
       Landscape phones:
-      Keep the button compact and very low so it stays below
-      the "INTERACTIVE" word in the 16:9 background art.
+      Keep the button compact and as low as possible so it sits
+      entirely below the "INTERACTIVE" word in the background art.
     */
     @media (orientation: landscape) and (max-height: 560px) {
       body {
@@ -133,29 +133,29 @@
       }
 
       .launch {
-        bottom: max(4px, env(safe-area-inset-bottom, 0px) + 4px);
-        min-height: 38px;
-        padding: 6px 16px;
+        bottom: max(2px, env(safe-area-inset-bottom, 0px) + 2px);
+        min-height: 34px;
+        padding: 3px 14px;
         width: auto;
-        max-width: min(52vw, 360px);
+        max-width: min(50vw, 340px);
 
-        font-size: clamp(13px, 1.9vw, 16px);
-        line-height: 1.05;
+        font-size: clamp(12px, 1.75vw, 14px);
+        line-height: 1.02;
 
-        border-radius: 10px;
+        border-radius: 9px;
         border-width: 1px;
 
         box-shadow:
-          0 0 18px rgba(25,216,255,0.50),
-          0 6px 18px rgba(0,0,0,0.45);
+          0 0 12px rgba(25,216,255,0.42),
+          0 4px 12px rgba(0,0,0,0.40);
       }
 
       .launch:hover,
       .launch:focus-visible {
-        transform: translateX(-50%) translateY(-2px) scale(1.01);
+        transform: translateX(-50%) translateY(-1px) scale(1.005);
         box-shadow:
-          0 0 24px rgba(25,216,255,0.70),
-          0 8px 22px rgba(0,0,0,0.50);
+          0 0 18px rgba(25,216,255,0.58),
+          0 6px 16px rgba(0,0,0,0.45);
       }
     }
 
