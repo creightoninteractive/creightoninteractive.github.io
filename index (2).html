@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Creighton Interactive</title>
+  <meta name="theme-color" content="#02060c" />
+  <meta name="referrer" content="no-referrer" />
+
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 img-src 'self' data:;
+                 style-src 'self' 'unsafe-inline';
+                 script-src 'none';
+                 object-src 'none';
+                 base-uri 'self';
+                 form-action 'none';
+                 upgrade-insecure-requests" />
+
+  <style>
+    :root {
+      --button-cyan-1: #19d8ff;
+      --button-cyan-2: #65e9ff;
+      --button-text: #041019;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      background: #02060c;
+    }
+
+    body {
+      min-height: 100svh;
+      min-height: 100dvh;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+
+      /* Default / landscape background */
+      background-image:
+        linear-gradient(rgba(0,0,0,0.03), rgba(0,0,0,0.18)),
+        url("CreightonInteractiveLogo16_9.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .page {
+      min-height: 100svh;
+      min-height: 100dvh;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Shared container for all game launch buttons. */
+    .launch-group {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: max(3.4vh, env(safe-area-inset-bottom, 0px) + 16px);
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+
+      width: min(92vw, 560px);
+      z-index: 2;
+    }
+
+    .launch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 58px;
+      padding: 0 28px;
+      width: 100%;
+
+      border-radius: 14px;
+      border: 2px solid rgba(255,255,255,0.72);
+      background: linear-gradient(135deg, var(--button-cyan-1), var(--button-cyan-2));
+      color: var(--button-text);
+      text-decoration: none;
+      text-align: center;
+
+      font-size: clamp(18px, 2vw, 25px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: 0.01em;
+
+      box-shadow:
+        0 0 28px rgba(25,216,255,0.60),
+        0 10px 34px rgba(0,0,0,0.55);
+
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .launch:hover,
+    .launch:focus-visible {
+      transform: translateY(-3px) scale(1.015);
+      box-shadow:
+        0 0 42px rgba(25,216,255,0.82),
+        0 15px 42px rgba(0,0,0,0.60);
+      outline: none;
+    }
+
+    /* Portrait phones and portrait tablets/iPads */
+    @media (orientation: portrait) {
+      body {
+        background-image:
+          linear-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.16)),
+          url("CreightonInteractivePortraitPhoneMode.png");
+        background-position: center center;
+        background-size: cover;
+      }
+
+      .launch-group {
+        bottom: max(2.6vh, env(safe-area-inset-bottom, 0px) + 14px);
+        width: min(88vw, 470px);
+        gap: 10px;
+      }
+
+      .launch {
+        min-height: 54px;
+        padding: 0 22px;
+        font-size: clamp(17px, 4.1vw, 22px);
+      }
+    }
+
+    /* Landscape phones: compact pair at the bottom. */
+    @media (orientation: landscape) and (max-height: 560px) {
+      body {
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .launch-group {
+        bottom: max(2px, env(safe-area-inset-bottom, 0px) + 2px);
+        width: min(55vw, 360px);
+        gap: 6px;
+      }
+
+      .launch {
+        min-height: 31px;
+        padding: 2px 12px;
+        font-size: clamp(11px, 1.6vw, 13px);
+        line-height: 1.0;
+        border-radius: 8px;
+        border-width: 1px;
+        box-shadow:
+          0 0 12px rgba(25,216,255,0.42),
+          0 4px 12px rgba(0,0,0,0.40);
+      }
+
+      .launch:hover,
+      .launch:focus-visible {
+        transform: translateY(-1px) scale(1.005);
+        box-shadow:
+          0 0 18px rgba(25,216,255,0.58),
+          0 6px 16px rgba(0,0,0,0.45);
+      }
+    }
+
+    /* iPad / tablet landscape */
+    @media (orientation: landscape) and (min-height: 561px) and (max-width: 1400px) {
+      .launch-group {
+        bottom: max(3vh, env(safe-area-inset-bottom, 0px) + 14px);
+        width: min(72vw, 520px);
+      }
+
+      .launch {
+        min-height: 52px;
+      }
+    }
+
+    /* Larger Chromebook / desktop */
+    @media (min-width: 1401px) {
+      .launch-group {
+        bottom: 3.8vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="launch-group" aria-label="Creighton Interactive games">
+      <a class="launch" href="/physics-skeeball/">
+        Play Creighton Skee-Ball Physics
+      </a>
+
+      <a class="launch" href="/pumpkin-key-laser-game/">
+        Pumpkin Key Laser Game
+      </a>
+    </div>
+  </main>
+</body>
+</html>
