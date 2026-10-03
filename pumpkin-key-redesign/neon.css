@@ -1,0 +1,87 @@
+/* Neon command-deck theme. All decoration stays outside the screenshot surface. */
+:root{
+  color-scheme:dark;
+  --green:#64eafa;--lime:#ffb767;--muted:#a5b7d0;--line:#233b56;
+  --cyan:#65f0ff;--violet:#bc9aff;--amber:#ffbc79;
+  background:#060c19;color:#e5efff;
+  font-family:'Bahnschrift','Trebuchet MS','Segoe UI',Arial,sans-serif;
+}
+body,body:fullscreen{
+  background:
+    linear-gradient(#6ed6ff06 1px,transparent 1px),
+    linear-gradient(90deg,#6ed6ff06 1px,transparent 1px),
+    radial-gradient(ellipse at 5% 8%,#12375088,transparent 48%),
+    radial-gradient(ellipse at 92% 60%,#29174780,transparent 52%),#060c19;
+  background-size:48px 48px,48px 48px,auto,auto,auto;
+  min-height:100vh;
+}
+.masthead{position:relative;background:#030814e8;border-bottom:1px solid #2a526c;padding:8px 4%;gap:24px;box-shadow:0 4px 24px #00b9eb0c}
+.masthead::after{content:'';position:absolute;bottom:-1px;left:4%;width:190px;height:2px;background:linear-gradient(90deg,#65f0ff,#9577ff,transparent);box-shadow:0 0 10px #4adcfb55;pointer-events:none}
+.brand{padding:0;flex:none;line-height:0}
+.brand-logo{display:block;width:148px;height:auto;aspect-ratio:1182/793;border-radius:4px}
+.course-tag{color:#a2bad4;font-family:'Consolas','Courier New',monospace;letter-spacing:1.9px}
+.course-tag span{color:#66ddea}
+.heading h1{color:#e8f7ff;font-family:'Bahnschrift','Trebuchet MS',sans-serif;font-size:25px;letter-spacing:.3px;text-shadow:0 0 22px #77dfff25}
+.heading .eyebrow{color:var(--cyan);letter-spacing:2.5px;font-family:'Consolas','Courier New',monospace}
+.intro{color:#a9b9d2}
+#practice,#complete{position:relative;background:#0b1425;border:1px solid #2e526e;border-radius:10px;box-shadow:0 0 0 4px #08111e,0 0 0 5px #17314b,0 12px 42px #0007,0 0 38px #29c9e70a}
+#practice::before,#practice::after,#complete::before,#complete::after{content:'';position:absolute;width:34px;height:34px;pointer-events:none;z-index:3}
+#practice::before,#complete::before{top:0;left:0;border-left:2px solid var(--cyan);border-top:2px solid var(--cyan);border-radius:9px 0 0;filter:drop-shadow(0 0 5px #55dffb66)}
+#practice::after,#complete::after{bottom:0;right:0;border-right:2px solid var(--violet);border-bottom:2px solid var(--violet);border-radius:0 0 9px;filter:drop-shadow(0 0 5px #b093ff66)}
+.lesson-bar{background:linear-gradient(100deg,#0d2030,#11172d);border-bottom:1px solid #263c56}
+.step-label{color:#d6e9ff;font-family:'Consolas','Courier New',monospace}
+.score-badge{color:#88f5ff;background:#103440;border:1px solid #2c7888;border-radius:5px;text-shadow:0 0 12px #58ecff50;box-shadow:inset 0 0 16px #3bddff08;font-family:'Consolas','Courier New',monospace}
+#progress li{background:#263347;border-color:#34465e}
+#progress li.done{background:#55deea;border-color:#55deea;box-shadow:0 0 7px #36dbea45}
+#progress li.current{background:#ffc584;border-color:#ffe1b4;box-shadow:0 0 0 3px #77421f55,0 0 10px #ff9a4866}
+.instruction{background:linear-gradient(110deg,#0c1a2c,#10172e)}
+#instruction,#complete h2{
+  font-family:'Bahnschrift','Trebuchet MS','Segoe UI',Arial,sans-serif;
+  font-weight:900;letter-spacing:.4px;
+  background:linear-gradient(100deg,#80f5ff 8%,#a4d5ff 42%,#c5a5ff 68%,#ffc584 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:none;filter:drop-shadow(0 0 8px #70b5ff24);
+}
+.instruction p{color:#aabbcf}
+.frame{background:repeating-linear-gradient(135deg,#0b172400 0 12px,#31496a0e 12px 13px),#030916;box-shadow:inset 0 1px #3b6b8580,inset 0 -1px #3b6b8580}
+.feedback-bar{background:#0b1627;border-top:1px solid #283c56}
+.point-chip{color:#96f6c1;background:#14392e;border:1px solid #286049}
+.point-chip[data-eligible=false]{color:#ffd09e;background:#392a1f;border-color:#755232}
+#attempts{color:#a5b5ce}
+#feedback{color:#d2e3f7}
+#feedback[data-kind=success]{color:#8df2c3}
+#feedback[data-kind=retry]{color:#ffbe87}
+#hint-text{background:#1a2442;color:#d3c8ff;border-left-color:#aa8bff}
+button,.primary{font-family:'Bahnschrift','Trebuchet MS',sans-serif;color:#bdf7ff;background:linear-gradient(135deg,#123b50,#16304c);border:1px solid #358296;border-radius:5px;letter-spacing:.35px;box-shadow:inset 0 0 15px #4bf4ff08,0 0 12px #51d9ef08}
+button:hover,.primary:hover{background:#1a4a61;border-color:#82efff;box-shadow:0 0 15px #38d8ee25;color:#fff}
+.quiet{color:#a8d4e7;background:#0c1b2d;border:1px solid #335069;box-shadow:none}
+.quiet:hover{background:#193449;color:#c8f7ff}
+#sound[aria-pressed=false]{color:#ffcc97;border-color:#826344}
+button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible,#stage:focus-visible{outline:2px solid #ffbf78;outline-offset:4px}
+footer{color:#91a5bd}.status-dot{background:#6de4d5;box-shadow:0 0 7px #3bdcc466}
+#complete{background:radial-gradient(ellipse at top,#1a3651,transparent 55%),#0a1324}
+.complete-mark{color:#ffc887;background:#3c2b26;border:1px solid #af7849;box-shadow:0 0 25px #ff9c2722}
+#final-score{color:#88f4ff;text-shadow:0 0 24px #4adafb35,3px 4px 0 #173d62;font-family:'Bahnschrift','Trebuchet MS',sans-serif}
+#complete p:not(.eyebrow){color:#acbed5}
+#score-message{color:#9ee8cf!important}
+#complete .summary strong{color:#bfa9f4}
+#complete .summary span{color:#a9bad2}
+#finale-image{border-color:#386680;box-shadow:0 0 20px #29b8ff10}
+#debug{background:#141d35;color:#c4cff0;border-top-color:#514a83}
+#debug select,#rectangle{background:#091323;color:#dbe6ff;border:1px solid #44577c}
+#dimension-input{color-scheme:light}
+@keyframes dotPulse{50%{box-shadow:0 0 0 3px #ffba6633,0 0 13px #ffba6655}}
+@keyframes glow{50%{box-shadow:inset 0 0 0 2px #79ebcd,0 0 18px #65f0ff44}}
+@media(min-width:700px) and (max-height:850px){.masthead{padding-top:5px;padding-bottom:5px}.brand-logo{width:112px}.heading h1{font-size:23px}.heading{margin-bottom:14px}.frame #stage{max-width:calc((100svh - 432px) * 16 / 9)}}
+@media(max-width:850px){.masthead{gap:12px}.brand-logo{width:120px}}
+@media(max-width:560px){.brand-logo{width:108px}.masthead{padding:8px 12px;gap:8px}.masthead button{font-size:11px}.heading h1{font-size:22px}#instruction{letter-spacing:0}.intro{color:#adbed3}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Classroom readability: enlarge the help area without changing the game surface. */
+.point-chip{font-size:13px;line-height:1.3;padding:6px 10px}
+#attempts{font-size:13px;line-height:1.5}
+#feedback{font-size:16px;line-height:1.5}
+#hint-text{font-size:17px;line-height:1.5;padding:11px 13px}
+.controls #hint{font-size:22px;font-weight:900;line-height:1.15;padding:11px 18px;border-color:#79eafa;box-shadow:0 0 15px #51d9ef24,inset 0 0 15px #4bf4ff08}
+#hint small{font-size:13px;line-height:1.35;margin-top:5px}
+.controls #restart{font-size:15px}
