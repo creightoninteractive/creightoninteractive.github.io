@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060c19">
+  <title>Pumpkin Key Classroom Redesign · Creighton Interactive</title>
+  <script src="hosting.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="neon.css">
+  <link rel="stylesheet" href="story.css">
+  <link rel="stylesheet" href="redesign.css">
+  <script src="story-data.js" defer></script>
+  <script src="story.js" defer></script>
+  <script src="lesson.js" defer></script>
+  <script src="game.js" defer></script>
+  <script src="redesign.js" defer></script>
+</head>
+<body>
+  <section id="offline-message"><div class="start-card"><img src="assets/branding/creighton-interactive.png" alt="Creighton Interactive"><h1>Pumpkin Key Laser Game</h1><p>This adventure runs on the web.</p><p>Visit <a href="https://CreightonInteractive.com" target="_blank" rel="noopener">CreightonInteractive.com</a> to play.</p></div></section>
+  <section id="story-root" aria-label="Pumpkin Key story">
+    <div id="story-start"><div class="start-card">
+      <img src="assets/branding/creighton-interactive.png" alt="Creighton Interactive">
+      <p class="story-eyebrow">AN AFTER-DARK DESIGN ADVENTURE</p>
+      <h1>Pumpkin Key<br>Laser Game</h1>
+      <p>One wrong turn. One locked door.<br>Your design skills are the way out.</p>
+      <button id="start-story" disabled>Start Story <span aria-hidden="true">→</span></button>
+      <p id="preload-status" role="status">Preparing the story…</p>
+      <button id="retry-loading" hidden>Try loading again</button>
+    </div></div>
+    <div id="story-stage" hidden><div id="story-image-box">
+      <img id="story-image-a" class="story-image" alt="" draggable="false">
+      <img id="story-image-b" class="story-image" alt="" draggable="false">
+      <button id="story-hotspot" hidden aria-label="Story target"></button>
+      <div id="story-prompt" hidden aria-live="polite"></div>
+    </div></div>
+    <div id="story-toolbar" class="story-toolbar"><span id="story-chapter" aria-live="polite">PUMPKIN KEY · V5</span><button id="story-sound" class="quiet" aria-pressed="true">Sound On</button><button id="skip-intro" class="quiet" disabled>Skip Intro</button></div>
+    <div id="story-audio-message" hidden role="status"><p>Press play to continue the story audio.</p><button id="retry-story-audio">Play audio</button></div>
+    <p id="story-caption" hidden></p>
+  </section>
+  <section id="scene11-shell" hidden aria-label="Laptop training game">
+    <img id="scene11-art" src="assets/story/scene11.png" alt="Laptop in the old house" width="1360" height="765">
+    <div id="laptop-screen-viewport"><div id="training-game-root" inert>
+<main class="game-shell">
+    <section id="practice" aria-label="Onshape training game">
+      <header class="top-hud">
+        <div class="game-identity"><a class="mini-brand" href="https://CreightonInteractive.com" target="_blank" rel="noopener" aria-label="Creighton Interactive website"><img src="assets/branding/creighton-interactive.png" alt="Creighton Interactive" width="1182" height="793"></a><h1>Onshape:<br>Pumpkin Quest</h1></div>
+        <div class="hint-center"><p id="hint-text" hidden aria-live="polite"></p><div id="feedback" role="status" aria-live="polite">Ready when you are.</div></div>
+        <div class="hud-tools"><div class="hud-buttons"><button id="hint">Hint <small>(costs this step's point)</small></button><button id="restart" class="quiet">Restart</button><button id="sound" class="quiet" aria-pressed="true">Sound On</button></div><p class="intro">30 challenges, 30 possible points. Two misses are free. A hint trades this step's point for help.</p><p class="magnify-tip">Hold Shift to magnify.</p></div>
+      </header>
+      <div class="challenge-hud">
+        <div class="progress-group"><span class="step-label" id="step-count">Loading lesson…</span><ol id="progress" aria-label="Lesson progress"></ol></div>
+        <div class="instruction"><span id="step-icon" hidden aria-hidden="true"></span><h2 id="instruction"></h2><p id="detail"></p><span id="gesture" hidden></span></div>
+        <div class="score-group"><span id="live-score" class="score-badge" aria-live="polite">Score: —</span><span id="point-status" class="point-chip">Point available</span><span id="attempts" class="sr-only">0 misses this step</span></div>
+      </div>
+      <div class="frame"><div id="stage" tabindex="0" role="group" aria-label="Interactive Onshape screenshot" aria-describedby="instruction detail">
+        <img id="screenshot" width="960" height="540" alt="" draggable="false">
+        <svg id="overlay" viewBox="0 0 960 540" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <input id="dimension-input" type="text" hidden autocomplete="off" spellcheck="false" aria-describedby="detail">
+      </div></div>
+      <aside id="debug" hidden><strong>Teacher authoring mode</strong><p>Alt + drag to measure a rectangle. All values use the original 960 × 540 image.</p><div class="debug-controls"><label>Preview step <select id="debug-step"></select></label><output id="coords">x: — · y: —</output><output id="delta">dx: — · dy: —</output></div><textarea id="rectangle" rows="3" readonly aria-label="Measured rectangle JSON"></textarea><button id="copy">Copy rectangle JSON</button><p id="percentages"></p></aside>
+    </section>
+    <section id="complete" hidden tabindex="-1" aria-labelledby="complete-title"><div class="complete-mark" aria-hidden="true">★</div><h2 id="complete-title">MISSION COMPLETE!</h2><p class="score-caption">SCORE</p><div id="final-score" aria-label="Final score">—</div><p id="score-message"></p><img id="finale-image" hidden alt="Onshape drawing prepared for export"><p id="completion-description">Your next creation awaits.</p><div class="summary"><div><strong id="lost-hints">0</strong><span>points traded for hints</span></div><div><strong id="lost-misses">0</strong><span>points lost after 3 misses</span></div><div><strong id="total-retries">0</strong><span>total misses</span></div><div><strong id="total-hints">0</strong><span>hints explored</span></div></div><button id="again" class="primary">Play Again <span aria-hidden="true">↗</span></button></section>
+  </main><div id="magnifier" hidden aria-hidden="true"><img id="magnifier-image" alt="" draggable="false"></div>
+    </div></div>
+  </section>
+  <div class="attribution"><a href="https://CreightonInteractive.com" target="_blank" rel="noopener">Creighton Interactive ↗</a></div>
+</body>
+</html>
+
+
