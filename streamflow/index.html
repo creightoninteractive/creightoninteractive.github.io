@@ -6,9 +6,10 @@
 <canvas id="unity-canvas" width="1366" height="768" tabindex="0" aria-label="Streamflow expedition"></canvas>
 <div id="splash"><div id="splash-art"><img id="splash-image" src="splash.png" alt="Streamflow: Cretaceous Expedition. Now entering Time Machine Lab. Preparing expedition...">
 <div id="loading-progress" role="progressbar" aria-label="Loading expedition" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="loading-fill"></div></div>
-<div id="creighton-brand"><img src="creighton-logo.png" alt="Creighton Interactive"><span>A CREIGHTON INTERACTIVE EXPERIENCE</span></div>
+<div id="creighton-brand"><img src="creighton-logo.png" alt="Creighton Interactive"></div>
 </div></div>
 <div id="audio-gate" hidden><button id="begin-intro">Begin Expedition</button></div>
+<section id="expedition-mission" aria-labelledby="mission-heading" hidden><div class="mission-layout"><h1 id="mission-heading">YOUR MISSION</h1><p class="mission-goal">Find out how much water flows down the stream every second.</p><p class="mission-reassurance">Your trainer will help you do it.</p><button id="mission-continue">CONTINUE</button></div></section>
 <section id="expedition-controls" aria-label="Expedition Controls" hidden><div class="controls-layout"><div class="controls-art"><img src="controls.png" alt="Expedition training. W A S D: move around. E: interact with equipment. Move your mouse to look around."><button id="begin-expedition" aria-label="Begin Expedition"><span class="sr-only">Begin Expedition</span></button></div><p id="controls-caption">Quick field briefing! W, A, S, and D move you around. Use your mouse to look, and E to interact with equipment. Ready? Let's make history!</p></div></section><div id="startup-error" role="alert" hidden></div>
 </div><footer><span>Streamflow: Cretaceous Expedition - A Creighton Interactive Experience</span><button id="fullscreen">Fullscreen</button></footer></main>
 <script src="startup.js"></script><script>

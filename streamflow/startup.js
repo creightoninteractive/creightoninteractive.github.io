@@ -3,6 +3,7 @@ window.StreamflowStartup=async function({loaderUrl,config}){
  const canvas=document.getElementById('unity-canvas'),container=document.getElementById('unity-fullscreen-container');
  const splash=document.getElementById('splash'),art=document.getElementById('splash-image'),bar=document.getElementById('loading-progress'),fill=document.getElementById('loading-fill');
  const gate=document.getElementById('audio-gate'),begin=document.getElementById('begin-intro'),controls=document.getElementById('expedition-controls'),enter=document.getElementById('begin-expedition');
+ const mission=document.getElementById('expedition-mission'),proceed=document.getElementById('mission-continue');
  const telemetry=window.streamflowStartup={minimumVisibleMs:2000,visibleMs:0,progress:[],released:false,contexts:[]};
  let instance,ready=false,painted=false,previous=performance.now(),released=false,started=false;
  const contexts=[];
@@ -11,7 +12,7 @@ window.StreamflowStartup=async function({loaderUrl,config}){
    telemetry.contexts=contexts.map(c=>c.state);
    if(instance&&released){
      instance.SendMessage('Expedition','BrowserAudioState',blocked?'blocked':'running');
-     const showGate=blocked&&controls.hidden&&!telemetry.expeditionBegun;
+     const showGate=blocked&&controls.hidden&&mission.hidden&&!telemetry.expeditionBegun;
      if(showGate&&gate.hidden){gate.hidden=false;begin.focus();console.log('INTRO_AUDIO_WAIT');}
      if(!blocked){gate.hidden=true;if(!started){started=true;instance.SendMessage('Expedition','BrowserReady','');console.log('INTRO_AUDIO_READY');}}
    }
@@ -20,13 +21,16 @@ window.StreamflowStartup=async function({loaderUrl,config}){
  if(Native){class ObservedAudioContext extends Native{constructor(...args){super(...args);contexts.push(this);this.addEventListener('statechange',audioState);audioState();}}window.AudioContext=ObservedAudioContext;if(window.webkitAudioContext)window.webkitAudioContext=ObservedAudioContext;}
  const unlock=()=>{for(const c of contexts)if(c.state!=='running')c.resume().then(audioState).catch(()=>{});audioState();};
  document.addEventListener('pointerdown',unlock);document.addEventListener('keydown',unlock);begin.addEventListener('click',unlock);
+ telemetry.showMission=()=>{window.getSelection()?.removeAllRanges();telemetry.expeditionBegun=false;gate.hidden=true;mission.hidden=false;proceed.focus();console.log('MISSION_VISIBLE');};
+ telemetry.hideMission=()=>{mission.hidden=true;console.log('MISSION_HIDDEN');};
+ proceed.addEventListener('click',()=>{unlock();instance.SendMessage('Expedition','ContinueFromMission','');});
  telemetry.showControls=()=>{window.getSelection()?.removeAllRanges();telemetry.expeditionBegun=false;gate.hidden=true;controls.hidden=false;enter.focus();console.log('CONTROLS_VISIBLE');};
  telemetry.hideControls=()=>{telemetry.expeditionBegun=true;controls.hidden=true;canvas.focus();console.log('CONTROLS_HIDDEN');};
  enter.addEventListener('click',()=>{unlock();instance.SendMessage('Expedition','BeginFromControls','');});
- // Unity captures keyboard defaults globally; keep the two focused HTML start buttons accessible.
+ // Unity captures keyboard defaults globally; keep focused HTML buttons accessible.
  document.addEventListener('keydown',event=>{
    const button=document.activeElement;
-   if((button===begin||button===enter)&&(event.key==='Enter'||event.key===' ')){
+   if((button===begin||button===enter||button===proceed)&&(event.key==='Enter'||event.key===' ')){
      event.preventDefault();event.stopImmediatePropagation();button.click();
    }
  },true);
