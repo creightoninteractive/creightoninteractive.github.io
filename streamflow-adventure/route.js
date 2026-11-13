@@ -1,7 +1,10 @@
 (function () {
-  function choose(ua, override) {
+  function choose(ua, override, platform, maxTouchPoints) {
     if (override === 'mobile' || override === 'desktop') return override;
-    if (/CrOS|Windows NT|Macintosh|iPad/i.test(ua)) return 'desktop';
+    if (/CrOS|Windows NT/i.test(ua)) return 'desktop';
+    // iPadOS desktop browsing identifies as a Mac, but exposes multitouch.
+    if (/iPad/i.test(ua) || ((platform === 'MacIntel' || /Macintosh/i.test(ua)) && maxTouchPoints > 1)) return 'mobile';
+    if (/Macintosh/i.test(ua)) return 'desktop';
     return /iPhone|iPod/i.test(ua) || (/Android/i.test(ua) && /Mobile/i.test(ua)) ? 'mobile' : 'desktop';
   }
   if (typeof module === 'object') { module.exports = { choose }; return; }
@@ -13,6 +16,6 @@
     });
   });
   if (new URLSearchParams(location.search).get('choose') !== '1') {
-    location.replace(choose(navigator.userAgent, preference) === 'mobile' ? '/streamflow-mobile/' : '/streamflow/');
+    location.replace(choose(navigator.userAgent, preference, navigator.platform, navigator.maxTouchPoints) === 'mobile' ? '/streamflow-mobile/' : '/streamflow/');
   }
 })();
