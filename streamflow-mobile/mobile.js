@@ -45,7 +45,7 @@
  function state(s){
   S=s;window.streamflowMobileState=s;
   intro.hidden=s.screen!=='intro';if(!intro.hidden){const src=`panel-${s.panel+1}.png`;if($('intro-image').getAttribute('src')!==src)$('intro-image').src=src;set('intro-caption',s.caption);}
-  root.hidden=['waiting','intro','mission','controls'].includes(s.screen);
+  root.hidden=['waiting','checkpoint','intro','mission','controls'].includes(s.screen);
   if(screen!==s.screen){endKey();reset();screen=s.screen;render();}
   const enlarged=!root.hidden&&screen!=='field';$('mobile-panel').hidden=!enlarged;$('lookup').hidden=['complete','failed'].includes(screen);set('panel-title',titles[screen]);
   $('touch-surface').hidden=enlarged||!s.walking;$('hud').hidden=enlarged;$('joystick-rest').hidden=enlarged||!s.walking;
