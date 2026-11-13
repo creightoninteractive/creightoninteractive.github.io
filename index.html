@@ -103,6 +103,26 @@
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
+    .streamflow-launch {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .switch-version {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      color: #b9f4ff;
+      font-size: 15px;
+      text-underline-offset: 3px;
+      background: rgba(2, 6, 12, 0.88);
+      border-radius: 8px;
+    }
+
+    .switch-version:focus-visible { outline: 2px solid #65e9ff; outline-offset: 2px; }
+
     .launch:hover,
     .launch:focus-visible {
       transform: translateY(-3px) scale(1.015);
@@ -163,6 +183,14 @@
           0 4px 12px rgba(0,0,0,0.40);
       }
 
+      .streamflow-launch { position: relative; flex: 1; }
+      .streamflow-launch .switch-version {
+        position: absolute;
+        bottom: calc(100% + 4px);
+        width: 100%;
+        font-size: 13px;
+      }
+
       .launch:hover,
       .launch:focus-visible {
         transform: translateY(-1px) scale(1.005);
@@ -196,9 +224,12 @@
 <body>
   <main class="page">
     <div class="launch-group" aria-label="Creighton Interactive games">
-      <a class="launch" href="https://creightoninteractive.com/streamflow/">
-        Streamflow Adventure
-      </a>
+      <div class="streamflow-launch">
+        <a class="launch" href="/streamflow-adventure/">
+          Streamflow Adventure
+        </a>
+        <a class="switch-version" href="/streamflow-adventure/?choose=1" aria-label="Switch Streamflow version">Switch Version</a>
+      </div>
 
       <a class="launch" href="/physics-skeeball/">
         Play Creighton Skee-Ball Physics
