@@ -1,0 +1,48 @@
+Tyrannosaurus rex – Animated, Science-Based by AnimalAnimator.com. https://animalanimator.com/free-3d-animated-t-rex-reference/ | CC BY 4.0: https://creativecommons.org/licenses/by/4.0/. Custom scale, Web texture reduction, three original skeletal clips retained. Redistribution with attribution, source/license links and indication of changes.
+
+KayKit Rogue, Adventurers 1.0 by Kay Lousberg. https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0 | CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Rig compatibility stand-in for field partner; four clips retained. CC0 permits redistribution.
+
+Boulder 01 by Rico Cilliers. https://polyhaven.com/a/boulder_01 | CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Cover mesh with collider. Redistribution allowed under CC0.
+
+Fern 02 by Rob Tuytel, Rico Cilliers. https://polyhaven.com/a/fern_02 | CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Alpha reconstructed from separate CC0 mask. Redistribution allowed under CC0.
+
+Ganges River Pebbles by Amal Kumar. https://polyhaven.com/a/ganges_river_pebbles | CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Original material on a locally modeled streambed patch. Redistribution allowed under CC0.
+
+Field partner: original synthetic Voice B / Wry Field Veteran, selected for this project. Dialogue rendered locally with Qwen3-TTS, Apache 2.0 code/model: https://github.com/QwenLM/Qwen3-TTS and https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base . Prerecorded audio; no speech service during play. No real-person voice reference used.
+
+FlowTracker2 is a SonTek/Xylem instrument. The game uses an original simplified educational display and probe diagram, informed by manufacturer documentation. Synthetic teaching measurements; this game is not manufacturer software. Reference: https://info.xylem.com/rs/240-UTB-146/images/flowtracker-manual.pdf .
+
+Arrival: original procedural theropod-like mud impression and CO2 analyzer. The 820 ppm reading is illustrative; navigation supplies the approximate 68 Ma destination. Paleosol context: Nordt et al. (2002), https://pubs.geoscienceworld.org/gsa/geology/article-abstract/30/8/703/192421/Paleosol-barometer-indicates-extreme-fluctuations . Modern comparison: https://www.data.jma.go.jp/ghg/kanshi/ghgp/co2_e.html . Track identity limits: https://www.nhm.ac.uk/discover/dinosaur-footprints.html .
+
+
+New local field recordings:
+Large brook, creek, stream, water sound. by SamsterBirdies. https://freesound.org/people/SamsterBirdies/sounds/584270/ | CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. 52-second crossfaded loop; filtered, transient-limited, resampled to 24 kHz stereo. Attribution retained voluntarily; originals supplied by the user.
+Dino Hiss Dragon Roar by 999999990. https://freesound.org/people/999999990/sounds/320345/ | CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Trimmed to 2.73-second roar body, faded, leveled and resampled to 24 kHz mono. Attribution retained voluntarily; originals supplied by the user.
+
+
+Fir Tree 01 by Rob Tuytel, Rico Cilliers — https://polyhaven.com/a/fir_tree_01 — CC0 1.0. Individual source maps adapted for this environment.
+Forest Floor by eye-candy.xyz — https://polyhaven.com/a/forest_floor — CC0 1.0. Individual source maps adapted for this environment.
+Fir Sapling Medium by Rob Tuytel and Rico Cilliers — https://polyhaven.com/a/fir_sapling_medium — CC0 1.0. Two locally rendered views are used for wooded banks.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+
+Streamflow character prototype — adapted assets
+
+Valery tpose blender rigged woman by xander.dice
+https://sketchfab.com/3d-models/valery-tpose-blender-rigged-woman-1cce3c0410634a9497fec3afc1fb8eda
+Creative Commons Attribution 4.0 — https://creativecommons.org/licenses/by/4.0/
+Changes: Fitted outfit; removed covered lower body; native-rig motion clips; optional selective darker skin material
+
+High visibilty vest 1 by Issa
+https://sketchfab.com/3d-models/high-visibilty-vest-1-5a75d007bcb64ad29a326669d67a30dc
+Creative Commons Attribution 4.0 — https://creativecommons.org/licenses/by/4.0/
+Changes: Fitted proportions and transferred torso weights; downscaled texture maps to 2048 pixels
+
+Cargo Pants and Boots by SKP_GAMES
+https://sketchfab.com/3d-models/cargo-pants-and-boots-8d932444b78e4fe6915e4719c4ab68d4
+Creative Commons Attribution 4.0 — https://creativecommons.org/licenses/by/4.0/
+Changes: Fitted proportions, UV diffuse material, anatomical four-influence leg weights
+
+Adaptations assembled locally for Streamflow. No creator endorsement is implied. Original source ZIPs retained unchanged. Native-rig fieldwork motion clips authored locally.
+
+November 2026 realism pass: added a subtle static resting-expression adjustment to Valery; raised and refitted the vest with clearance around the existing shirt and transferred garment weights. Both skin variants retained. Reversible edits are saved in Valery_Realism.blend; original sources and motion clips remain unchanged.
