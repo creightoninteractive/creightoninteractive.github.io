@@ -3,6 +3,7 @@ window.StreamflowStartup=async function({loaderUrl,config}){
  const canvas=document.getElementById('unity-canvas'),container=document.getElementById('unity-fullscreen-container');
  const splash=document.getElementById('splash'),art=document.getElementById('splash-image'),bar=document.getElementById('loading-progress'),fill=document.getElementById('loading-fill');
  const gate=document.getElementById('audio-gate'),begin=document.getElementById('begin-intro'),controls=document.getElementById('expedition-controls'),enter=document.getElementById('begin-expedition');
+ const checkpoint=document.getElementById('expedition-checkpoint'),continueSaved=document.getElementById('checkpoint-continue'),startNew=document.getElementById('checkpoint-new');
  const mission=document.getElementById('expedition-mission'),proceed=document.getElementById('mission-continue');
  const telemetry=window.streamflowStartup={minimumVisibleMs:2000,visibleMs:0,progress:[],released:false,contexts:[]};
  let instance,ready=false,painted=false,previous=performance.now(),released=false,started=false,gestureAccepted=false;
@@ -23,6 +24,10 @@ window.StreamflowStartup=async function({loaderUrl,config}){
  const unlock=()=>{for(const c of contexts)if(c.state!=='running')c.resume().then(audioState).catch(()=>{});audioState();};
  begin.addEventListener('click',()=>{gestureAccepted=true;unlock();});
  document.addEventListener('visibilitychange',audioState);addEventListener('resize',audioState);
+ telemetry.showCheckpoint=()=>{telemetry.checkpointActive=true;telemetry.expeditionBegun=false;gate.hidden=true;checkpoint.hidden=false;continueSaved.focus();console.log('CHECKPOINT_CHOICE_VISIBLE');};
+ telemetry.hideCheckpoint=()=>{telemetry.checkpointActive=false;checkpoint.hidden=true;canvas.focus();};
+ continueSaved.addEventListener('click',()=>{unlock();telemetry.expeditionBegun=true;instance.SendMessage('Expedition','ContinueCheckpoint','');});
+ startNew.addEventListener('click',()=>{unlock();telemetry.expeditionBegun=false;instance.SendMessage('Expedition','StartNewExpedition','');});
  telemetry.showMission=()=>{window.getSelection()?.removeAllRanges();telemetry.expeditionBegun=false;gate.hidden=true;mission.hidden=false;proceed.focus();console.log('MISSION_VISIBLE');audioState();};
  telemetry.hideMission=()=>{mission.hidden=true;console.log('MISSION_HIDDEN');};
  proceed.addEventListener('click',()=>{unlock();instance.SendMessage('Expedition','ContinueFromMission','');});
@@ -32,7 +37,7 @@ window.StreamflowStartup=async function({loaderUrl,config}){
  // Unity captures keyboard defaults globally; keep focused HTML buttons accessible.
  document.addEventListener('keydown',event=>{
    const button=document.activeElement;
-   if((button===begin||button===enter||button===proceed)&&(event.key==='Enter'||event.key===' ')){
+   if((button===begin||button===enter||button===proceed||button===continueSaved||button===startNew)&&(event.key==='Enter'||event.key===' ')){
      event.preventDefault();event.stopImmediatePropagation();button.click();
    }
  },true);
