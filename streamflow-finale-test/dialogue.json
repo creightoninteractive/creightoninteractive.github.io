@@ -8,8 +8,8 @@
     "file": "audio/discharge.wav"
   },
   "total": {
-    "text": "Three stations, one stream. Add the three station discharges. Keep the full values while calculating, then round your final answer to two decimal places if you like.",
-    "file": "audio/total.wav"
+    "text": "Three stations, one stream. Add the three station discharges shown on the glass board. Two decimal places are plenty, and a little rounding is allowed.",
+    "file": "audio/total.wav?rounding=2"
   },
   "complete": {
     "text": "We did it! Prehistoric streamflow data, and a discharge we can explain. Science survives another field trip.",
@@ -36,7 +36,7 @@
     "file": "audio/total_hint1.wav"
   },
   "total_hint2": {
-    "text": "Line up the decimal points. Use the full station results, add all three, and round only at the end.",
-    "file": "audio/total_hint2.wav"
+    "text": "Line up the decimal points. Add all three station discharges shown on the board. Keep two decimal places.",
+    "file": "audio/total_hint2.wav?rounding=2"
   }
 }
