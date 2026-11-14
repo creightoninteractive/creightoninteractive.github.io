@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Streamflow: Cretaceous Expedition</title><link rel="stylesheet" href="startup.css"><link rel="stylesheet" href="mobile.css">
+<title>Streamflow: Cretaceous Expedition</title><link rel="stylesheet" href="startup.css?science=2"><link rel="stylesheet" href="mobile.css?science=2">
 <link rel="preload" href="splash.png" as="image"></head><body>
 <main id="unity-container"><div id="unity-fullscreen-container">
 <canvas id="unity-canvas" width="960" height="540" tabindex="0" aria-label="Streamflow expedition"></canvas>
@@ -9,10 +9,10 @@
 <div id="creighton-brand"><img src="creighton-logo.png" alt="Creighton Interactive"></div>
 </div></div>
 <div id="audio-gate" hidden><button id="begin-intro">BEGIN ADVENTURE</button></div>
-<section id="expedition-checkpoint" aria-labelledby="checkpoint-heading" hidden><div class="checkpoint-layout"><h1 id="checkpoint-heading">WELCOME BACK, EXPLORER!</h1><p>You have an unfinished expedition.</p><button id="checkpoint-continue">Continue Expedition</button><button id="checkpoint-new">Start New Expedition</button><p class="checkpoint-note">Starting new clears your saved progress.</p></div></section>
+<section id="expedition-checkpoint" aria-labelledby="checkpoint-heading" hidden><div class="checkpoint-layout"><h1 id="checkpoint-heading">WELCOME BACK, EXPLORER!</h1><p id="checkpoint-message">You have an unfinished expedition.</p><button id="checkpoint-continue">Continue Expedition</button><button id="checkpoint-new">Start New Expedition</button><p class="checkpoint-note">Starting new clears your saved progress.</p></div></section>
 <section id="expedition-mission" aria-labelledby="mission-heading" hidden><div class="mission-layout"><h1 id="mission-heading">YOUR MISSION</h1><p class="mission-goal">Find out how much water flows down the stream every second.</p><p class="mission-reassurance">Your trainer will help you do it.</p><button id="mission-continue">CONTINUE</button></div></section>
 <section id="expedition-controls" aria-label="Expedition Controls" hidden><div class="controls-layout"><div class="controls-art"><img src="controls.png" alt="How to explore. Move with your left thumb. Drag your right thumb to look. Tap glowing arrows to interact."><button id="begin-expedition" aria-label="Begin Expedition"><span class="sr-only">Begin Expedition</span></button></div><p id="controls-caption">Quick field briefing! Use your left thumb to walk, and drag your right thumb to look around. Tap the glowing arrows when you're close. Ready? Let's make history!</p></div></section><div id="startup-error" role="alert" hidden></div>
 </div><footer><span>Streamflow: Cretaceous Expedition - A Creighton Interactive Experience</span><button id="fullscreen">Fullscreen</button></footer></main>
-<script src="mobile.js"></script><script src="startup.js"></script><script>
-StreamflowStartup({loaderUrl:"Build/streamflow-mobile.loader.js",config:{dataUrl:"Build/streamflow-mobile.data.unityweb",frameworkUrl:"Build/streamflow-mobile.framework.js.unityweb",codeUrl:"Build/streamflow-mobile.wasm.unityweb",streamingAssetsUrl:"StreamingAssets",fullscreenElementID:"unity-fullscreen-container",companyName:"Creighton Interactive",productName:"Streamflow Mobile Adventure",productVersion:"0.1.0"}});
+<script src="mobile.js?science=2"></script><script src="startup.js?science=2"></script><script>
+StreamflowStartup({loaderUrl:"Build/streamflow-mobile.loader.js?science=2",config:{dataUrl:"Build/streamflow-mobile.data.unityweb?science=2",frameworkUrl:"Build/streamflow-mobile.framework.js.unityweb?science=2",codeUrl:"Build/streamflow-mobile.wasm.unityweb?science=2",streamingAssetsUrl:"StreamingAssets",fullscreenElementID:"unity-fullscreen-container",companyName:"Creighton Interactive",productName:"Streamflow Mobile Adventure",productVersion:"0.1.0"}});
 </script></body></html>

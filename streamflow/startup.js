@@ -22,7 +22,7 @@ window.StreamflowStartup=async function({loaderUrl,config}){
  if(Native){class ObservedAudioContext extends Native{constructor(...args){super(...args);contexts.push(this);this.addEventListener('statechange',audioState);audioState();}}window.AudioContext=ObservedAudioContext;if(window.webkitAudioContext)window.webkitAudioContext=ObservedAudioContext;}
  const unlock=()=>{for(const c of contexts)if(c.state!=='running')c.resume().then(audioState).catch(()=>{});audioState();};
  document.addEventListener('pointerdown',unlock);document.addEventListener('keydown',unlock);begin.addEventListener('click',unlock);
- telemetry.showCheckpoint=()=>{telemetry.checkpointActive=true;telemetry.expeditionBegun=false;gate.hidden=true;checkpoint.hidden=false;continueSaved.focus();console.log('CHECKPOINT_CHOICE_VISIBLE');};
+ telemetry.showCheckpoint=(stale=false)=>{continueSaved.hidden=stale;document.getElementById('checkpoint-message').textContent=stale?'The science lesson has been updated. Start a new expedition to use the corrected measurements. Your old save stays until you choose.':'You have an unfinished expedition.';telemetry.checkpointActive=true;telemetry.expeditionBegun=false;gate.hidden=true;checkpoint.hidden=false;(stale?startNew:continueSaved).focus();console.log('CHECKPOINT_CHOICE_VISIBLE');};
  telemetry.hideCheckpoint=()=>{telemetry.checkpointActive=false;checkpoint.hidden=true;canvas.focus();};
  continueSaved.addEventListener('click',()=>{unlock();telemetry.expeditionBegun=true;instance.SendMessage('Expedition','ContinueCheckpoint','');});
  startNew.addEventListener('click',()=>{unlock();telemetry.expeditionBegun=false;instance.SendMessage('Expedition','StartNewExpedition','');});
