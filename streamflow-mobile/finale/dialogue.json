@@ -1,0 +1,42 @@
+{
+  "area": {
+    "text": "Back in the lab, with all our fingers. Lovely. Open your field log. Multiply each station's width by its depth to find its cross-sectional area.",
+    "file": "audio/area.wav"
+  },
+  "discharge": {
+    "text": "Those are our areas. Now multiply each area by the water velocity at that station. That gives discharge in cubic metres per second.",
+    "file": "audio/discharge.wav"
+  },
+  "total": {
+    "text": "Three stations, one stream. Add the three station discharges shown on the glass board. Two decimal places are plenty, and a little rounding is allowed.",
+    "file": "audio/total.wav?rounding=2"
+  },
+  "complete": {
+    "text": "We did it! Prehistoric streamflow data, and a discharge we can explain. Science survives another field trip.",
+    "file": "audio/complete.wav"
+  },
+  "area_hint1": {
+    "text": "Check your field log first. Use the width and depth from the same station.",
+    "file": "audio/area_hint1.wav"
+  },
+  "area_hint2": {
+    "text": "Area is width times depth. Multiply the two measurements, then check where your decimal point belongs.",
+    "file": "audio/area_hint2.wav"
+  },
+  "discharge_hint1": {
+    "text": "Use the area you've just calculated, and the velocity recorded for that same station.",
+    "file": "audio/discharge_hint1.wav"
+  },
+  "discharge_hint2": {
+    "text": "Multiply square metres by metres per second. Your answer describes a volume of water passing each second.",
+    "file": "audio/discharge_hint2.wav"
+  },
+  "total_hint1": {
+    "text": "Add the three station discharges on the glass board. This time, we're adding, not multiplying.",
+    "file": "audio/total_hint1.wav"
+  },
+  "total_hint2": {
+    "text": "Line up the decimal points. Add all three station discharges shown on the board. Keep two decimal places.",
+    "file": "audio/total_hint2.wav?rounding=2"
+  }
+}

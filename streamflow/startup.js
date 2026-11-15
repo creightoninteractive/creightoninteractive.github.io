@@ -59,6 +59,6 @@ window.StreamflowStartup=async function({loaderUrl,config}){
  script.onerror=()=>error('The local game loader could not be loaded. Reload after checking the preview server.');
  script.onload=()=>createUnityInstance(canvas,config,progress=>{
    const value=Math.max(0,Math.min(1,progress));fill.style.width=(100*value)+'%';bar.setAttribute('aria-valuenow',String(Math.round(100*value)));telemetry.progress.push(value);
- }).then(game=>{instance=game;ready=true;telemetry.readyAt=performance.now();document.getElementById('fullscreen').onclick=()=>game.SetFullscreen(1);}).catch(error);
+ }).then(game=>{instance=game;window.StreamflowLaboratory.ready(game);ready=true;telemetry.readyAt=performance.now();document.getElementById('fullscreen').onclick=()=>game.SetFullscreen(1);}).catch(error);
  document.body.appendChild(script);
 };
